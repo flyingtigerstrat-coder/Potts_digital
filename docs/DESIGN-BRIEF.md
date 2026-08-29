@@ -1,5 +1,5 @@
 # DESIGN BRIEF — Potts Deck and Patio
-**v1.0 · 2026-08-29 · canonical copy: `[repo] potts_digital/docs/DESIGN-BRIEF.md` · working copies in Drive carry date+version in the filename**
+**v1.1 · 2026-08-29 · canonical copy: `[repo] potts_digital/docs/DESIGN-BRIEF.md` · working copies in Drive carry date+version in the filename**
 
 This brief is written to stand alone: a Design agent with no chat history should be able to start from this document plus the linked references. It is the contract between two seats:
 
@@ -87,7 +87,13 @@ Any of, saved to the Drive folder (dated + versioned) — pick what fits the del
 
 Always include: what changed vs. the previous version, and the reasoning — the client relationship runs on being able to explain *why*.
 
-## 9 · Facts still pending from the client (design around them)
+## 9 · Voice (ratified 2026-08-29)
+
+**Plain, specific, confident, a little warm — a Texas tradesman you'd trust at your house.** Established examples from the live site: "Keep the breeze, lose the mosquitoes." · "A straight answer on cost." · "Days, not months." Sentences say something checkable and distinct; no interchangeable marketing filler. This is also a GEO decision: answer engines quote specific claims, not "stunning oasis" copy.
+
+**Anti-reference:** the client's original GBP description ("Transform your backyard into a stunning oasis… leading experts in custom outdoor living solutions… meticulous attention to detail and exceptional customer service") is the register to avoid. But it carries three facts the design and copy should absorb: (1) he **designs and** builds — design consultation is part of the offer; (2) the process is **collaborative** ("works closely with you"); (3) the range runs **cozy to grand** — useful portfolio framing. Confirm with the owner whether that description was his own wording; if it was, weigh his preference before pushing the plainer voice into client-facing surfaces.
+
+## 10 · Facts still pending from the client (design around them)
 
 Domain name (owned, not yet supplied) · phone/email · Google Business Profile link · confirmed city list · owner's preferred service names · years in business / license / warranty info · testimonials. Use visibly bracketed placeholders (`[PHONE NUMBER]`) — never invent a plausible-looking fact.
 
