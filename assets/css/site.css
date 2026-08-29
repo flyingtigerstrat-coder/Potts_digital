@@ -1,21 +1,8 @@
 /* Potts Deck and Patio — site styles
-   Design tokens up top; everything else consumes them. */
+   Tokens live in tokens.css (the design-library interface — Design seat
+   owns values there); this file consumes them and owns structure. */
 
-:root {
-  --ink: #24211c;          /* near-black warm text */
-  --ink-soft: #5c564c;
-  --paper: #faf7f2;        /* warm off-white */
-  --paper-deep: #f0e9df;
-  --cedar: #a45a2a;        /* primary — cedar stain */
-  --cedar-deep: #7c3f1d;
-  --pine: #3e4a3a;         /* deep green-gray — headers/footer */
-  --pine-deep: #2c352a;
-  --sky: #e8f0ee;
-  --line: #ddd3c4;
-  --radius: 10px;
-  --shadow: 0 2px 12px rgba(36, 33, 28, 0.10);
-  --max: 1100px;
-}
+@import url("tokens.css");
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
@@ -26,7 +13,7 @@ html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
-  font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font: 16px/1.6 var(--font-body);
   color: var(--ink);
   background: var(--paper);
 }
@@ -38,7 +25,7 @@ a:focus-visible, button:focus-visible {
 }
 img { max-width: 100%; height: auto; display: block; }
 
-h1, h2, h3 { line-height: 1.2; font-weight: 750; letter-spacing: -0.01em; }
+h1, h2, h3 { font-family: var(--font-display); line-height: 1.2; font-weight: 750; letter-spacing: -0.01em; }
 h1 { font-size: clamp(1.9rem, 4.5vw, 3rem); }
 h2 { font-size: clamp(1.4rem, 3vw, 2rem); }
 
@@ -59,7 +46,7 @@ h2 { font-size: clamp(1.4rem, 3vw, 2rem); }
   font-weight: 800; font-size: 1.15rem; color: #fff;
   text-decoration: none; letter-spacing: 0.01em;
 }
-.brand span { color: #e9b877; }
+.brand span { color: var(--gold-soft); }
 .site-nav { margin-left: auto; display: flex; gap: 4px; flex-wrap: wrap; }
 .site-nav a {
   color: #f0ede6; text-decoration: none; padding: 8px 12px;
@@ -124,7 +111,7 @@ section.alt { background: var(--paper-deep); }
 .photo-open:hover img { transform: scale(1.03); }
 .photo-tag {
   position: absolute; left: 10px; bottom: 10px;
-  background: rgba(30, 36, 28, 0.82); color: #f0d6ad;
+  background: rgba(30, 36, 28, 0.82); color: var(--gold-muted);
   font-size: 0.72rem; font-weight: 700; letter-spacing: 0.04em;
   padding: 4px 10px; border-radius: 999px; pointer-events: none;
 }
@@ -168,7 +155,7 @@ section.alt { background: var(--paper-deep); }
 
 /* Footer */
 .site-footer { background: var(--pine-deep); color: #d9d5cb; padding: 40px 0; font-size: 0.95rem; }
-.site-footer a { color: #f0d6ad; }
+.site-footer a { color: var(--gold-muted); }
 .site-footer .cols { display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
 .site-footer .fine { margin-top: 26px; font-size: 0.8rem; color: #a8a498; }
 

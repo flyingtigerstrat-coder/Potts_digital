@@ -1,0 +1,40 @@
+/* Potts Deck and Patio — DESIGN TOKENS
+   =====================================================================
+   THE design-library interface. The Design seat owns the VALUES in this
+   file; the Code seat owns everything that consumes them. Changing a
+   value here restyles the whole site — no other file needs touching for
+   palette/type/spacing changes. Add tokens rather than hard-coding a
+   new value anywhere else; never reference a raw hex in site.css or
+   markup when a token exists.
+   Contract details: docs/DESIGN-BRIEF.md §4.
+   ===================================================================== */
+
+:root {
+  /* Color — palette */
+  --ink: #24211c;          /* near-black warm text */
+  --ink-soft: #5c564c;     /* secondary text */
+  --paper: #faf7f2;        /* warm off-white page ground */
+  --paper-deep: #f0e9df;   /* alternating section ground */
+  --cedar: #a45a2a;        /* primary accent — CTAs, kickers */
+  --cedar-deep: #7c3f1d;   /* accent hover / links */
+  --pine: #3e4a3a;         /* deep green-gray — page heads */
+  --pine-deep: #2c352a;    /* header / footer ground */
+  --sky: #e8f0ee;          /* reserved cool tint (unused so far) */
+  --line: #ddd3c4;         /* borders / dividers */
+  --gold-soft: #e9b877;    /* wordmark second half */
+  --gold-muted: #f0d6ad;   /* photo-tag text, footer links on pine */
+
+  /* Type
+     Body/display are one system stack today — a deliberate placeholder.
+     The Design seat picks the real pairing (see DESIGN-BRIEF §6); when
+     it lands, only these two tokens (plus @font-face/link tags) change. */
+  --font-display: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-body: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  /* Shape & depth */
+  --radius: 10px;
+  --shadow: 0 2px 12px rgba(36, 33, 28, 0.10);
+
+  /* Layout */
+  --max: 1100px;           /* content column width */
+}
