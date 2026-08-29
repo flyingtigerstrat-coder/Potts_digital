@@ -1,0 +1,158 @@
+/* Potts Deck and Patio — site styles
+   Design tokens up top; everything else consumes them. */
+
+:root {
+  --ink: #24211c;          /* near-black warm text */
+  --ink-soft: #5c564c;
+  --paper: #faf7f2;        /* warm off-white */
+  --paper-deep: #f0e9df;
+  --cedar: #a45a2a;        /* primary — cedar stain */
+  --cedar-deep: #7c3f1d;
+  --pine: #3e4a3a;         /* deep green-gray — headers/footer */
+  --pine-deep: #2c352a;
+  --sky: #e8f0ee;
+  --line: #ddd3c4;
+  --radius: 10px;
+  --shadow: 0 2px 12px rgba(36, 33, 28, 0.10);
+  --max: 1100px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+body {
+  margin: 0;
+  font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+}
+
+a { color: var(--cedar-deep); }
+a:focus-visible, button:focus-visible {
+  outline: 3px solid var(--cedar);
+  outline-offset: 2px;
+}
+img { max-width: 100%; height: auto; display: block; }
+
+h1, h2, h3 { line-height: 1.2; font-weight: 750; letter-spacing: -0.01em; }
+h1 { font-size: clamp(1.9rem, 4.5vw, 3rem); }
+h2 { font-size: clamp(1.4rem, 3vw, 2rem); }
+
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+
+/* Header / nav */
+.site-header {
+  background: var(--pine-deep);
+  color: #fff;
+  position: sticky; top: 0; z-index: 20;
+  box-shadow: var(--shadow);
+}
+.site-header .wrap {
+  display: flex; align-items: center; gap: 18px;
+  min-height: 62px; flex-wrap: wrap; padding-block: 8px;
+}
+.brand {
+  font-weight: 800; font-size: 1.15rem; color: #fff;
+  text-decoration: none; letter-spacing: 0.01em;
+}
+.brand span { color: #e9b877; }
+.site-nav { margin-left: auto; display: flex; gap: 4px; flex-wrap: wrap; }
+.site-nav a {
+  color: #f0ede6; text-decoration: none; padding: 8px 12px;
+  border-radius: 6px; font-weight: 550; font-size: 0.95rem;
+}
+.site-nav a:hover, .site-nav a[aria-current="page"] { background: rgba(255,255,255,0.14); }
+
+/* Hero */
+.hero {
+  /* background-image set inline on the element (relative URLs resolve
+     against the page there, not this stylesheet) */
+  background-color: var(--pine);
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  padding: clamp(60px, 12vw, 130px) 0;
+}
+.hero p { font-size: 1.15rem; max-width: 34em; }
+.hero .cta-row { margin-top: 28px; }
+
+.btn {
+  display: inline-block; padding: 12px 22px; border-radius: var(--radius);
+  font-weight: 700; text-decoration: none; border: 2px solid transparent;
+}
+.btn-primary { background: var(--cedar); color: #fff; }
+.btn-primary:hover { background: var(--cedar-deep); }
+.btn-ghost { border-color: #fff; color: #fff; margin-left: 10px; }
+.btn-ghost:hover { background: rgba(255,255,255,0.15); }
+
+/* Sections */
+section { padding: clamp(40px, 7vw, 72px) 0; }
+section.alt { background: var(--paper-deep); }
+.kicker {
+  text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.8rem;
+  font-weight: 700; color: var(--cedar-deep); margin-bottom: 6px;
+}
+
+/* Cards */
+.grid { display: grid; gap: 22px; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+.card {
+  background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 22px; box-shadow: var(--shadow);
+}
+.card h3 { margin-top: 0; }
+.card p { color: var(--ink-soft); margin-bottom: 0; }
+.card a.more { display: inline-block; margin-top: 10px; font-weight: 650; }
+
+/* Gallery */
+.gallery { display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+.gallery figure {
+  margin: 0; background: #fff; border: 1px solid var(--line);
+  border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow);
+}
+.gallery img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; }
+.gallery figcaption { padding: 10px 14px; font-size: 0.9rem; color: var(--ink-soft); }
+.gallery-empty { color: var(--ink-soft); font-style: italic; }
+
+/* Filter buttons (portfolio) */
+.filters { display: flex; gap: 8px; flex-wrap: wrap; margin: 18px 0 26px; }
+.filters button {
+  border: 1px solid var(--line); background: #fff; color: var(--ink);
+  padding: 7px 14px; border-radius: 999px; cursor: pointer; font: inherit; font-size: 0.9rem;
+}
+.filters button[aria-pressed="true"] { background: var(--pine); color: #fff; border-color: var(--pine); }
+
+/* Footer */
+.site-footer { background: var(--pine-deep); color: #d9d5cb; padding: 40px 0; font-size: 0.95rem; }
+.site-footer a { color: #f0d6ad; }
+.site-footer .cols { display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+.site-footer .fine { margin-top: 26px; font-size: 0.8rem; color: #a8a498; }
+
+/* Page intro (inner pages) */
+.page-head { background: var(--pine); color: #fff; padding: clamp(36px, 6vw, 60px) 0; }
+.page-head p { max-width: 40em; color: #e4e1d8; }
+
+.prose { max-width: 46em; }
+.prose li { margin-bottom: 6px; }
+
+.notice-draft {
+  background: #fff6e5; border: 1px dashed var(--cedar); border-radius: var(--radius);
+  padding: 10px 16px; font-size: 0.85rem; color: var(--ink-soft); margin: 20px 0;
+}
+
+/* FAQ */
+details {
+  background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 14px 18px; margin-bottom: 12px;
+}
+summary { font-weight: 700; cursor: pointer; }
+details p { color: var(--ink-soft); }
+
+@media (max-width: 640px) {
+  .site-nav { gap: 0; }
+  .site-nav a { padding: 8px 9px; font-size: 0.88rem; }
+  .btn-ghost { margin-left: 0; margin-top: 10px; }
+}

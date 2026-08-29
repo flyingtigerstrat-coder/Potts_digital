@@ -1,0 +1,103 @@
+{
+  "photos": [
+    {
+      "src": "assets/photos/new-deck-construction-rainbow-pasture-view-central-texas",
+      "alt": "Newly built pressure-treated wood deck with horizontal rail overlooking green pastureland under a double rainbow",
+      "caption": "A brand-new deck and a double rainbow over the pasture \u2014 some jobs finish with a show.",
+      "service": "custom-decks",
+      "area": "central-texas",
+      "date": "2026-08-29",
+      "note": "bootstrap screenshot; replace with original via DAM intake"
+    },
+    {
+      "src": "assets/photos/pressure-treated-deck-hilltop-view-central-texas",
+      "alt": "Large pressure-treated pine deck on a hilltop with mature shade trees and a Hill Country valley view",
+      "caption": "A hilltop deck built to take in the long view.",
+      "service": "custom-decks",
+      "area": "central-texas",
+      "date": "2026-08-29",
+      "note": "bootstrap screenshot; replace with original via DAM intake"
+    },
+    {
+      "src": "assets/photos/screened-porch-enclosure-addition-central-texas",
+      "alt": "Tall screened porch enclosure addition with wood-trimmed screen panels and screen door on a stucco home",
+      "caption": "A full-height screened enclosure \u2014 bug-free evenings, all year.",
+      "service": "screened-porches",
+      "area": "central-texas",
+      "date": "2026-08-29",
+      "note": "bootstrap screenshot; replace with original via DAM intake"
+    },
+    {
+      "src": "assets/photos/elevated-deck-cable-railing-lake-view-central-texas",
+      "alt": "Elevated wood deck with cable railing and stairs overlooking a wide lake",
+      "caption": "Cable railing keeps the lake view wide open.",
+      "service": "custom-decks",
+      "area": "central-texas",
+      "date": "2026-08-29",
+      "note": "bootstrap screenshot; replace with original via DAM intake"
+    },
+    {
+      "src": "assets/photos/covered-patio-wood-ceiling-porch-swing-central-texas",
+      "alt": "Covered patio with stained tongue-and-groove wood ceiling, hanging porch swing, and picnic table at dusk",
+      "caption": "A covered patio with a stained wood ceiling and a porch swing for the sunset.",
+      "service": "covered-patios",
+      "area": "central-texas",
+      "date": "2026-08-29",
+      "note": "bootstrap screenshot; replace with original via DAM intake"
+    },
+    {
+      "src": "assets/photos/backyard-deck-wraparound-steps-stock-tank-pool-central-texas",
+      "alt": "Stained backyard deck with wraparound steps, black metal railing, and a galvanized stock-tank pool",
+      "caption": "Wraparound steps and a stock-tank pool deck \u2014 backyard, upgraded.",
+      "service": "custom-decks",
+      "area": "central-texas",
+      "date": "2026-08-29",
+      "note": "bootstrap screenshot; replace with original via DAM intake"
+    },
+    {
+      "src": "assets/photos/custom-boardwalk-stairs-log-railing-central-texas",
+      "alt": "Wide custom boardwalk staircase with rustic log railings descending through shade trees",
+      "caption": "A boardwalk-style staircase with rustic log rails, built into the treeline.",
+      "service": "outdoor-structures",
+      "area": "central-texas",
+      "date": "2026-08-29",
+      "note": "bootstrap screenshot; replace with original via DAM intake"
+    },
+    {
+      "src": "assets/photos/custom-boardwalk-deck-shade-trees-central-texas",
+      "alt": "Winding custom boardwalk deck with wood railings passing between mature shade trees",
+      "caption": "A winding boardwalk threaded between the trees.",
+      "service": "outdoor-structures",
+      "area": "central-texas",
+      "date": "2026-08-29",
+      "note": "bootstrap screenshot; replace with original via DAM intake"
+    },
+    {
+      "src": "assets/photos/composite-deck-cable-railing-lake-view-central-texas",
+      "alt": "Gray composite deck with black cable railing overlooking a wide blue lake",
+      "caption": "Low-maintenance composite decking, cable rail, and nothing between you and the water.",
+      "service": "composite-decks",
+      "area": "central-texas",
+      "date": "2026-08-29",
+      "note": "bootstrap screenshot; replace with original via DAM intake"
+    },
+    {
+      "src": "assets/photos/composite-deck-covered-pergola-stone-wall-central-texas",
+      "alt": "Brown composite deck under a covered pergola with a dry-stacked stone retaining wall at its edge",
+      "caption": "Composite decking under cover, with stonework to match.",
+      "service": "composite-decks",
+      "area": "central-texas",
+      "date": "2026-08-29",
+      "note": "bootstrap screenshot; replace with original via DAM intake"
+    },
+    {
+      "src": "assets/photos/cedar-pergola-stained-deck-new-build-central-texas",
+      "alt": "New cedar pergola over a stained wood platform deck behind a modern home",
+      "caption": "A cedar pergola and platform deck, fresh off the build.",
+      "service": "pergolas",
+      "area": "central-texas",
+      "date": "2026-08-29",
+      "note": "bootstrap screenshot; replace with original via DAM intake"
+    }
+  ]
+}
