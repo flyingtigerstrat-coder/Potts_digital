@@ -10,9 +10,9 @@ This brief is written to stand alone: a Design agent with no chat history should
 
 ## 1 · The client and the job
 
-**Potts Deck and Patio** builds custom decks, pergolas, covered patios, and screened porches for homeowners in the Central Texas corridor (Belton / Temple / Killeen / Salado — pending final confirmation). Owner is a friend of the Foundry's principal; the Foundry manages his entire digital presence under contract.
+**Potts Deck & Patio LLC** builds custom decks, pergolas, covered patios, and screened porches for homeowners in the Central Texas corridor (Temple / Belton / Killeen / Salado — Temple confirmed via the Google Business Profile, the rest pending). Owner is a friend of the Foundry's principal; the Foundry manages his entire digital presence under contract. The business has a strong live reputation: 5.0 stars, 16 Google reviews.
 
-**The customer** is a Central Texas homeowner, very likely on a phone, who wants to (a) see proof this builder does beautiful work, (b) trust him enough to have him at their house, and (c) call or text him. Every design decision serves those three moments. The phone call is the conversion — there is no cart, no signup, no funnel beyond "get a free estimate."
+**The customer** is a Central Texas homeowner, very likely on a phone, who wants to (a) see proof this builder does beautiful work, (b) trust him enough to have him at their house, and (c) call or text him. Every design decision serves those three moments. The phone call is the conversion — there is no cart, no signup, no funnel beyond "get a free estimate." Phone: (254) 256-3752.
 
 **The product proof is photography.** The portfolio is the site's engine, and it gets refreshed continuously through a DAM pipeline (§5) — design for a gallery that grows and changes weekly, not a fixed set of images.
 
@@ -61,7 +61,7 @@ The owner uploads job photos to a Drive intake folder; a pipeline processes them
 4. **Homepage** applying the direction (desktop + mobile).
 5. **Component sheet** — the §4 inventory in the new direction, with states.
 6. **Portfolio/gallery treatment** — the card/grid/lightbox system under §5's data constraints.
-7. Later, on request: testimonial/review pattern (GBP reviews will feed it), before/after pairing pattern (deck building's best sales asset), seasonal campaign treatments.
+7. Later, on request: testimonial/review pattern (5.0/16 GBP reviews will feed it), before/after pairing pattern (deck building's best sales asset), seasonal campaign treatments.
 
 **Ask before adding scope** (new sections, new pages, new content types) — propose, don't unilaterally design them in.
 
@@ -76,7 +76,7 @@ These are GEO/SEO and performance requirements the design must live within. GEO 
 5. **Accessibility floor:** WCAG AA contrast (4.5:1 body text), 44px touch targets, visible focus, reduced-motion honored. The audience skews older-homeowner; err legible.
 6. **Alt text and captions are SEO surface** — the design must keep captions visible or available, not decoration to be cropped.
 7. **Phone-first conversion:** the call/text action is reachable within one thumb-move on mobile at all scroll positions (sticky or repeated CTA — design's call which).
-8. Schema.org markup (LocalBusiness, Service, FAQPage) is invisible plumbing the Code seat maintains — but visible NAP (name/phone) must match the Google Business Profile exactly wherever the design displays it.
+8. Schema.org markup (LocalBusiness, Service, FAQPage) is invisible plumbing the Code seat maintains — but visible NAP (name/phone) must match the Google Business Profile exactly wherever the design displays it: **"Potts Deck & Patio LLC", (254) 256-3752**.
 
 ## 8 · Deliverable formats
 
@@ -95,7 +95,7 @@ Always include: what changed vs. the previous version, and the reasoning — the
 
 ## 10 · Facts still pending from the client (design around them)
 
-Domain name (owned, not yet supplied) · phone/email · Google Business Profile link · confirmed city list · owner's preferred service names · years in business / license / warranty info · testimonials. Use visibly bracketed placeholders (`[PHONE NUMBER]`) — never invent a plausible-looking fact.
+Domain name (owned, not yet supplied) · email address · confirmed city list beyond Temple · owner's preferred service names · years in business / license / warranty info · testimonials (16 GBP reviews exist — quotes not yet pulled). Use visibly bracketed placeholders (`[EMAIL ADDRESS]`) — never invent a plausible-looking fact. Known facts: name "Potts Deck & Patio LLC", phone (254) 256-3752, GBP link https://share.google/4HS9roPQUaF6AfrNh, hours close 6 PM (opening time unknown).
 
 ---
 *Maintained by the Code seat. Propose amendments via a dated Drive doc; ratified changes become v1.x here.*
