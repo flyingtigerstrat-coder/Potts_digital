@@ -9,8 +9,8 @@
    still renders; contact spans show a TBD marker until CONFIG is filled. */
 
 const CONFIG = {
-  phone: "",          // e.g. "+12545550100"  — TODO before launch
-  phoneDisplay: "",   // e.g. "(254) 555-0100"
+  phone: "+12542563752",
+  phoneDisplay: "(254) 256-3752",
   email: "",          // e.g. "info@example.com"
 };
 

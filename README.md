@@ -37,9 +37,9 @@ Adding photos = adding entries here + files in `assets/photos/`. Never hand-edit
 ## Launch checklist (placeholders to replace)
 
 - [ ] **Domain**: replace `PLACEHOLDER-DOMAIN.com` in `index.html`, `portfolio.html`, `faq.html`, `services/*.html`, `sitemap.xml`, `robots.txt`, `llms.txt`; add `CNAME` file with the bare domain; configure Pages custom domain + DNS.
-- [ ] **Phone/email**: fill `CONFIG` at the top of `assets/js/site.js` AND `telephone` in the JSON-LD in `index.html`.
-- [ ] **Google Business Profile URL**: replace `TODO-GOOGLE-BUSINESS-PROFILE-URL` in `index.html` JSON-LD (`sameAs`). NAP must match GBP exactly.
-- [ ] **Service area**: Belton/Temple/Killeen/Salado is presumed — confirm with owner (index, faq, service pages, JSON-LD).
+- [x] **Phone**: (254) 256-3752 — in `CONFIG` (`assets/js/site.js`) and JSON-LD. **Email still needed** (CONFIG.email empty; contact section shows [email TBD]).
+- [x] **Google Business Profile**: linked in `sameAs` (https://share.google/4HS9roPQUaF6AfrNh). Site name matches GBP: "Potts Deck & Patio LLC" in JSON-LD/footer, "Potts Deck & Patio" display. GBP is 5.0/16 reviews; once the domain is live, set it in the GBP Website field.
+- [ ] **Service area**: GBP says "Temple and nearby areas"; site now leads with Temple. Belton/Killeen/Salado still presumed — confirm with owner.
 - [ ] **Copy review**: all service-page and FAQ copy is Foundry draft — owner confirms services offered and wording (especially anything implying scope, e.g. electrical rough-ins).
 - [ ] **Photos**: current images are low-res bootstrap screenshots. Replace with originals via the DAM (`Potts DAM/00_INTAKE` in Drive) before launch. IMG_4569 was excluded (contains phone UI).
 - [ ] Enable GitHub Pages: Settings → Pages → deploy from `main`, root.
