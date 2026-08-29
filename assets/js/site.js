@@ -44,8 +44,12 @@ function fillContacts() {
   });
 }
 
-function photoCard(p) {
+function photoCard(p, index, list) {
   const fig = document.createElement("figure");
+  const btn = document.createElement("button");
+  btn.type = "button";
+  btn.className = "photo-open";
+  btn.setAttribute("aria-label", "View larger: " + (p.caption || p.alt || "project photo"));
   const pic = document.createElement("picture");
   const webp = document.createElement("source");
   webp.type = "image/webp";
@@ -55,10 +59,71 @@ function photoCard(p) {
   img.alt = p.alt || "";
   img.loading = "lazy";
   pic.append(webp, img);
+  const tag = document.createElement("span");
+  tag.className = "photo-tag";
+  tag.textContent = SERVICE_LABELS[p.service] || p.service;
+  btn.append(pic, tag);
+  btn.addEventListener("click", () => openLightbox(list, index));
   const cap = document.createElement("figcaption");
   cap.textContent = p.caption || "";
-  fig.append(pic, cap);
+  fig.append(btn, cap);
   return fig;
+}
+
+/* Lightbox — one overlay per page, built on demand. Esc / backdrop click
+   closes; arrows and swipe-free prev/next buttons navigate. */
+let lb = null;
+function buildLightbox() {
+  lb = document.createElement("div");
+  lb.className = "lightbox";
+  lb.hidden = true;
+  lb.innerHTML =
+    '<div class="lb-backdrop"></div>' +
+    '<figure class="lb-stage" role="dialog" aria-modal="true" aria-label="Photo viewer">' +
+    '  <img alt="">' +
+    '  <figcaption></figcaption>' +
+    '</figure>' +
+    '<button type="button" class="lb-btn lb-close" aria-label="Close">&times;</button>' +
+    '<button type="button" class="lb-btn lb-prev" aria-label="Previous photo">&#8249;</button>' +
+    '<button type="button" class="lb-btn lb-next" aria-label="Next photo">&#8250;</button>';
+  document.body.append(lb);
+  lb.querySelector(".lb-backdrop").addEventListener("click", closeLightbox);
+  lb.querySelector(".lb-close").addEventListener("click", closeLightbox);
+  lb.querySelector(".lb-prev").addEventListener("click", () => stepLightbox(-1));
+  lb.querySelector(".lb-next").addEventListener("click", () => stepLightbox(1));
+  document.addEventListener("keydown", (e) => {
+    if (lb.hidden) return;
+    if (e.key === "Escape") closeLightbox();
+    if (e.key === "ArrowLeft") stepLightbox(-1);
+    if (e.key === "ArrowRight") stepLightbox(1);
+  });
+}
+let lbList = [], lbIndex = 0, lbReturnFocus = null;
+function showLightboxPhoto() {
+  const p = lbList[lbIndex];
+  const img = lb.querySelector(".lb-stage img");
+  img.src = `${p.src}-1600.jpg`;
+  img.alt = p.alt || "";
+  lb.querySelector(".lb-stage figcaption").textContent =
+    `${p.caption || ""}  ·  ${lbIndex + 1} / ${lbList.length}`;
+}
+function openLightbox(list, index) {
+  if (!lb) buildLightbox();
+  lbList = list; lbIndex = index;
+  lbReturnFocus = document.activeElement;
+  showLightboxPhoto();
+  lb.hidden = false;
+  document.body.style.overflow = "hidden";
+  lb.querySelector(".lb-close").focus();
+}
+function stepLightbox(dir) {
+  lbIndex = (lbIndex + dir + lbList.length) % lbList.length;
+  showLightboxPhoto();
+}
+function closeLightbox() {
+  lb.hidden = true;
+  document.body.style.overflow = "";
+  if (lbReturnFocus) lbReturnFocus.focus();
 }
 
 async function renderGalleries() {
@@ -85,7 +150,7 @@ async function renderGalleries() {
       grid.textContent = "";
       let list = filter && filter !== "all" ? photos.filter((p) => p.service === filter) : photos.slice();
       if (limit) list = list.slice(0, limit);
-      list.forEach((p) => grid.append(photoCard(p)));
+      list.forEach((p, i) => grid.append(photoCard(p, i, list)));
     };
 
     if (withFilters) {
@@ -94,7 +159,8 @@ async function renderGalleries() {
       services.forEach((s) => {
         const b = document.createElement("button");
         b.type = "button";
-        b.textContent = s === "all" ? "All projects" : (SERVICE_LABELS[s] || s);
+        const n = s === "all" ? photos.length : photos.filter((p) => p.service === s).length;
+        b.textContent = (s === "all" ? "All projects" : (SERVICE_LABELS[s] || s)) + ` (${n})`;
         b.setAttribute("aria-pressed", s === "all" ? "true" : "false");
         b.addEventListener("click", () => {
           bar.querySelectorAll("button").forEach((x) => x.setAttribute("aria-pressed", "false"));

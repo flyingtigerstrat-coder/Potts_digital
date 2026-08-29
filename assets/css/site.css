@@ -113,9 +113,50 @@ section.alt { background: var(--paper-deep); }
   margin: 0; background: #fff; border: 1px solid var(--line);
   border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow);
 }
-.gallery img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; }
+.photo-open {
+  display: block; width: 100%; padding: 0; border: 0; background: none;
+  cursor: zoom-in; position: relative; font: inherit;
+}
+.gallery img {
+  width: 100%; aspect-ratio: 3 / 4; object-fit: cover;
+  transition: transform 0.25s ease;
+}
+.photo-open:hover img { transform: scale(1.03); }
+.photo-tag {
+  position: absolute; left: 10px; bottom: 10px;
+  background: rgba(30, 36, 28, 0.82); color: #f0d6ad;
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.04em;
+  padding: 4px 10px; border-radius: 999px; pointer-events: none;
+}
 .gallery figcaption { padding: 10px 14px; font-size: 0.9rem; color: var(--ink-soft); }
 .gallery-empty { color: var(--ink-soft); font-style: italic; }
+
+/* Lightbox */
+.lightbox { position: fixed; inset: 0; z-index: 100; display: flex; align-items: center; justify-content: center; }
+.lightbox[hidden] { display: none; } /* display:flex above would otherwise defeat the hidden attribute */
+.lb-backdrop { position: absolute; inset: 0; background: rgba(14, 13, 11, 0.92); }
+.lb-stage {
+  position: relative; margin: 0; max-width: min(92vw, 1100px); max-height: 90vh;
+  display: flex; flex-direction: column; align-items: center;
+}
+.lb-stage img {
+  max-width: 100%; max-height: 80vh; width: auto; height: auto;
+  border-radius: var(--radius); box-shadow: 0 8px 40px rgba(0,0,0,0.6);
+}
+.lb-stage figcaption { color: #e4e1d8; padding: 12px 6px; font-size: 0.95rem; text-align: center; }
+.lb-btn {
+  position: absolute; z-index: 101; border: 0; cursor: pointer;
+  background: rgba(255,255,255,0.12); color: #fff;
+  width: 46px; height: 46px; border-radius: 50%;
+  font-size: 1.6rem; line-height: 1;
+}
+.lb-btn:hover { background: rgba(255,255,255,0.25); }
+.lb-close { top: 18px; right: 18px; }
+.lb-prev { left: 14px; top: 50%; transform: translateY(-50%); }
+.lb-next { right: 14px; top: 50%; transform: translateY(-50%); }
+@media (max-width: 640px) {
+  .lb-prev { left: 6px; } .lb-next { right: 6px; }
+}
 
 /* Filter buttons (portfolio) */
 .filters { display: flex; gap: 8px; flex-wrap: wrap; margin: 18px 0 26px; }
